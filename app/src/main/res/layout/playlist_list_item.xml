@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="playlistItem"
+            type="com.nora.devbyte.domain.model.Playlist" />
+
+        <variable
+            name="playlistListener"
+            type="com.nora.devbyte.ui.playlist.adapter.PlaylistListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/playlist_card_container"
+        style="@style/DevByte.MaterialCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/spacing_normal"
+        android:onClick="@{(view) -> playlistListener.onItemClicked(view, playlistItem)}"
+        android:transitionName="@{playlistItem.title}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/video_thumbnail_iv"
+                android:layout_width="@dimen/width_height_no_size"
+                android:layout_height="@dimen/width_height_no_size"
+                android:adjustViewBounds="false"
+                android:cropToPadding="false"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:setImageSrc="@{playlistItem.thumbnail}"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/play_icon_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintTop_toTopOf="@id/video_title_tv"
+                app:srcCompat="@drawable/ic_round_play_arrow" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/video_title_tv"
+                style="@style/DevByte.TextView"
+                android:layout_width="@dimen/width_height_no_size"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_small"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:text="@{playlistItem.title}"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/play_icon_iv"
+                app:layout_constraintTop_toBottomOf="@id/video_thumbnail_iv"
+                tools:text="@string/label_title_video_title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/video_description_tv"
+                style="@style/DevByte.TextView.body"
+                android:layout_width="@dimen/width_height_no_size"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:text="@{playlistItem.shortDescription()}"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/video_title_tv"
+                tools:text="@string/label_body_simple_description" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/video_updated_time_tv"
+                style="@style/DevByte.TextView.body_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginBottom="@dimen/spacing_small"
+                android:text="@{playlistItem.updatedTimeElapsed()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/video_description_tv"
+                tools:text="@string/label_body_updated_time" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/spacing_small" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/spacing_small" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

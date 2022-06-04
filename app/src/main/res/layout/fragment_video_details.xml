@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.details.VideoDetailsFragment">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.nora.devbyte.ui.details.VideoDetailsViewModel" />
+
+        <variable
+            name="listener"
+            type="com.nora.devbyte.ui.details.VideoListener" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/details_sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:colorBackground"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/details_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:transitionName="@string/video_details_card_transition_name">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/details_card_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/detail_video_thumbnail_iv"
+                    android:layout_width="@dimen/width_height_no_size"
+                    android:layout_height="@dimen/width_height_no_size"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintDimensionRatio="16:9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:setImageSrc="@{viewmodel.video.thumbnail}"
+                    tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/details_title_tv"
+                    style="@style/DevByte.TextView"
+                    android:layout_width="@dimen/width_height_no_size"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_normal"
+                    android:text="@{viewmodel.video.title}"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                    app:layout_constraintStart_toEndOf="@id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/detail_video_thumbnail_iv"
+                    tools:text="@string/label_title_video_title" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/details_updated_time_tv"
+                    style="@style/DevByte.TextView.body_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:text="@{viewmodel.video.updatedTimeElapsed()}"
+                    app:layout_constraintStart_toEndOf="@id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/details_title_tv"
+                    tools:text="@string/label_body_updated_time" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/details_description_tv"
+                    style="@style/DevByte.TextView.body_full"
+                    android:layout_width="@dimen/width_height_no_size"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_normal"
+                    android:text="@{viewmodel.video.description}"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                    app:layout_constraintStart_toEndOf="@id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/details_updated_time_tv"
+                    tools:text="@string/label_body_full_description" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/details_watch_on_youtube_btn"
+                    style="@style/DevByte.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/button_size"
+                    android:layout_marginTop="@dimen/spacing_normal"
+                    android:layout_marginBottom="@dimen/spacing_normal"
+                    android:onClick="@{() -> listener.onButtonWatchOnYoutubeClicked(viewmodel.video.url)}"
+                    android:text="@string/button_label_watch_on"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                    app:layout_constraintStart_toEndOf="@id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/details_description_tv"
+                    tools:text="@string/button_label_watch_on" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/spacing_small" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/spacing_small" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

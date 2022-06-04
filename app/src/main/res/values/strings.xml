@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">DevByte</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="label_title_video_title">Video Title</string>
+    <string name="label_body_simple_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque luctus at tellus in euismod. Morbi magna tellus, rutrum id sem vel, iaculis vehicula elit. Suspendisse ut orci metus.</string>
+    <string name="label_body_full_description">Get an overview of what tools and features are available in Android Studio Bumblebee and Android Gradle plugin 7.1.\n\nNew features: \n• Compose interactive preview, \n• Layout inspector snapshots \n• New device manager and ADB over Wi-fi \n• Support for profileable apps and other profiler improvements \n• Cacheable lint task \n• Unified Gradle test runner for instrumentation tests \n• Even more stable AGP APIs for plugin authors \n\nResources: \nAndroid Studio release notes → https://goo.gle/3fRB0bq \nAGP release notes → https://goo.gle/3rHGB9Q \nFile an Android Studio bug → https://goo.gle/3fJWIhR \nCatch more Android Studio and Tools → https://goo.gle/AndroidStudio-Tools \n​Subscribe to Android Developers → https://goo.gle/AndroidDevs \n\n​#Featured​ #Develop​ #AndroidStudio \n\nproduct: Android - Android Studio; fullname: Wojtek Kaliciński;</string>
+    <string name="label_body_updated_time">2022–01–25T18:00:30+00:00</string>
+
+    <string name="button_label_watch_on">Watch on YouTube</string>
+
+    <string name="video_details_card_transition_name">video_details_card</string>
+</resources>

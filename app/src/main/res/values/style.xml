@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  CardView  -->
+    <style name="DevByte.MaterialCardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/width_height_no_size</item>
+        <item name="cardElevation">@dimen/spacing_short</item>
+        <item name="cardPreventCornerOverlap">true</item>
+    </style>
+
+    <style name="DevByte.MaterialCardView_fullscreen" parent="DevByte.MaterialCardView">
+        <item name="cardElevation">@dimen/width_height_no_size</item>
+    </style>
+
+    <!--  TextView  -->
+    <style name="DevByte.TextView" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">@dimen/textSize_title</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DevByte.TextView.body" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">@dimen/textSize_body</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="DevByte.TextView.body_full" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">@dimen/textSize_body</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="DevByte.TextView.body_small" parent="DevByte.TextView.body">
+        <item name="android:textSize">@dimen/textSize_body_small</item>
+    </style>
+
+    <!--  Button  -->
+    <style name="DevByte.Button.TextAppearance" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+</resources>

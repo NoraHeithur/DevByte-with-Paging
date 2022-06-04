@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/video_playlist_navhost"
+    app:startDestination="@id/playlistFragment">
+    <fragment
+        android:id="@+id/playlistFragment"
+        android:name="com.nora.devbyte.ui.playlist.PlaylistFragment"
+        android:label="fragment_playlist"
+        tools:layout="@layout/fragment_playlist">
+        <action
+            android:id="@+id/action_playlistFragment_to_videoDetailsFragment"
+            app:destination="@id/videoDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoDetailsFragment"
+        android:name="com.nora.devbyte.ui.details.VideoDetailsFragment"
+        android:label="fragment_video_details"
+        tools:layout="@layout/fragment_video_details">
+        <argument
+            android:name="video"
+            app:argType="com.nora.devbyte.domain.model.Playlist" />
+    </fragment>
+</navigation>

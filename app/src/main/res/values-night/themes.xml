@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.DevByte" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/color_green_light_900</item>
+        <item name="colorPrimaryVariant">@color/color_green_dark_900</item>
+        <item name="colorOnPrimary">@color/color_Black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/color_amber_light_900</item>
+        <item name="colorSecondaryVariant">@color/color_amber_light_900</item>
+        <item name="colorOnSecondary">@color/color_Black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <!--  Button  -->
+    <style name="DevByte.Button" parent="Widget.MaterialComponents.Button.OutlinedButton.Icon">
+        <item name="icon">@drawable/ic_youtube</item>
+        <item name="iconTint">@color/color_red</item>
+        <item name="cornerRadius">@dimen/button_corner</item>
+        <item name="textAppearanceBodyLarge">@style/DevByte.Button.TextAppearance</item>
+        <item name="android:textColor">@color/color_red</item>
+    </style>
+
+</resources>
