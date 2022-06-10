@@ -75,8 +75,6 @@ dependencies {
     // koin
     implementation(Libraries.koinAndroid)
     implementation(Libraries.koinCore)
-    implementation(Libraries.koinNavigation)
-    implementation(Libraries.koinWork)
 
     // kotlin
     implementation(Libraries.kotlinStdlib)
@@ -84,7 +82,7 @@ dependencies {
     // lifecycle
     implementation(Libraries.lifecycleLivedata)
     implementation(Libraries.lifecycleRuntime)
-    implementation(Libraries.lifecycleViewmodel)
+    implementation(Libraries.lifecycleViewModel)
     kapt(Libraries.lifecycleCompiler)
 
     // localization
@@ -121,9 +119,6 @@ dependencies {
 
     // timber
     implementation(Libraries.timber)
-
-    // work
-    implementation(Libraries.work)
 
     // test
     // espresso

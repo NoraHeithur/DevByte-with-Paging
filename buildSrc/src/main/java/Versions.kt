@@ -21,5 +21,4 @@ object Versions {
     const val room = "2.4.2"
     const val swipe = "1.1.0"
     const val timber = "5.0.1"
-    const val work = "2.7.1"
 }
