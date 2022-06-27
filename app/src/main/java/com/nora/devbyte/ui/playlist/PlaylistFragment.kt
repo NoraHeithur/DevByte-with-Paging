@@ -9,6 +9,7 @@ import androidx.core.view.doOnNextLayout
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.transition.MaterialElevationScale
@@ -17,6 +18,7 @@ import com.nora.devbyte.databinding.FragmentPlaylistBinding
 import com.nora.devbyte.domain.model.Playlist
 import com.nora.devbyte.ui.playlist.adapter.PlaylistAdapter
 import com.nora.devbyte.ui.playlist.adapter.PlaylistListener
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -39,6 +41,10 @@ class PlaylistFragment : Fragment(), PlaylistListener {
                         startPostponedEnterTransition()
                     }
                 }
+
+                binding.swipePlaylist.setOnRefreshListener {
+                    refresh()
+                }
             }
         }
         postponeEnterTransition()
@@ -48,6 +54,12 @@ class PlaylistFragment : Fragment(), PlaylistListener {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.getPlaylistLiveData().observe(viewLifecycleOwner) { playlist ->
                 adapter.submitData(lifecycle, playlist)
+            }
+        }
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            adapter.loadStateFlow.collectLatest { state ->
+                binding.swipePlaylist.isRefreshing = state.refresh is LoadState.Loading
             }
         }
     }

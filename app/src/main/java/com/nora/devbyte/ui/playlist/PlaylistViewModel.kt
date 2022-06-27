@@ -13,12 +13,6 @@ import timber.log.Timber
 
 class PlaylistViewModel(private val playlistRepository: PlaylistRepository) : ViewModel() {
 
-    init {
-        viewModelScope.launch {
-            playlistRepository.getDevBytePlaylistResponse()
-        }
-    }
-
     suspend fun getPlaylistLiveData(): LiveData<PagingData<Playlist>> {
         return playlistRepository.getDevBytePlaylist().cachedIn(viewModelScope)
     }

@@ -12,12 +12,35 @@ import timber.log.Timber
 import java.io.IOException
 
 class PlaylistPagingSource(
+    private val service: DevByteService,
     private val playlistDao: PlaylistDao
 ) : PagingSource<Int, Playlist>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Playlist> {
         return try {
-            val playlist = if (playlistDao.getPlaylist().isNotEmpty()){
+            val playlistDb = playlistDao.getPlaylist()
+
+            val playlistService = service.getVideoPlaylistAsync()
+            val playlistResponse = playlistService.body()
+            val playlistResult = playlistResponse?.playlistNetworks
+
+            playlistResult?.map { playlistNetwork ->
+                playlistNetwork.toDatabaseModel()
+            }?.apply {
+                when (playlistDb.isEmpty()) {
+                    true -> {
+                        playlistDao.insertPlaylist(this)
+                    }
+                    false -> {
+                        if (playlistDb.size < playlistResult.size) {
+                            playlistDao.clearPlaylist()
+                            playlistDao.insertPlaylist(this)
+                        }
+                    }
+                }
+            }
+
+            val playlist = if (playlistDao.getPlaylist().isNotEmpty()) {
                 playlistDao.getPlaylist().map { it.toDomainModel() }
             } else {
                 emptyList()
@@ -30,6 +53,8 @@ class PlaylistPagingSource(
                 nextKey = null
             )
         } catch (e: IOException) {
+            return LoadResult.Error(e)
+        } catch (e: HttpException) {
             return LoadResult.Error(e)
         }
     }

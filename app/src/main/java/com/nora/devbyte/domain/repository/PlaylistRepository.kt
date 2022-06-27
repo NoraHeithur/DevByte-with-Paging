@@ -8,7 +8,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface PlaylistRepository {
 
-    suspend fun getDevBytePlaylistResponse()
     suspend fun getDevBytePlaylist() : LiveData<PagingData<Playlist>>
-
 }

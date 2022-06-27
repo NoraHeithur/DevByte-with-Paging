@@ -36,7 +36,7 @@ DevByte with Paging is a revamped application that follows the name of the [orig
 This project uses [data](https://devbytes.udacity.com/devbytes.json) list from [Developing Android Apps with Kotlin](https://classroom.udacity.com/courses/ud9012) course.
 
 ## Acknowledge & Guideline
-The relevant knowledge resources inspired and guided me in app development.
+The relevant knowledge resources inspired and guided me in this project.
 
 ### Android Projects
 - [android-showcase](https://github.com/igorwojda/android-showcase) - a sample project that demonstrates a modern Android development with popular libraries and best development practices.
@@ -49,10 +49,7 @@ The relevant knowledge resources inspired and guided me in app development.
 - [Android Paging Basics](https://developer.android.com/codelabs/android-paging-basics#1) - how to use basics of Paging 3 library and components.
 
 ### Course
-- [Developing Android Apps with Kotlin](https://classroom.udacity.com/courses/ud9012) - how to use the basics of the Paging 3 library and components.
-
-## Upcoming improvements
-- Create tests
+- [Developing Android Apps with Kotlin](https://classroom.udacity.com/courses/ud9012) - fundamentals of Android Development with Kotlin, essentials of Android Architecture Components, and Jetpack.
 
 ## License
 This project is licensed under the [MIT](https://github.com/NoraHeithur/CovDecem/blob/main/LICENSE) license.

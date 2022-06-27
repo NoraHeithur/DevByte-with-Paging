@@ -6,6 +6,7 @@
         <entry key="..\:/WorkOnly/AndroidStudioProjects/DevByte/app/src/main/res/drawable/ic_round_broken_image.xml" value="0.1625" />
         <entry key="..\:/WorkOnly/AndroidStudioProjects/DevByte/app/src/main/res/drawable/ic_round_play_arrow.xml" value="0.183" />
         <entry key="..\:/WorkOnly/AndroidStudioProjects/DevByte/app/src/main/res/drawable/ic_youtube.xml" value="0.163" />
+        <entry key="..\:/WorkOnly/AndroidStudioProjects/DevByte/app/src/main/res/font/roboto.xml" value="0.1" />
         <entry key="..\:/WorkOnly/AndroidStudioProjects/DevByte/app/src/main/res/layout-land/fragment_play_list.xml" value="0.21324786324786324" />
         <entry key="..\:/WorkOnly/AndroidStudioProjects/DevByte/app/src/main/res/layout-land/playlist_list_item.xml" value="0.19" />
         <entry key="..\:/WorkOnly/AndroidStudioProjects/DevByte/app/src/main/res/layout/activity_main.xml" value="0.22" />
@@ -13,7 +14,7 @@
         <entry key="..\:/WorkOnly/AndroidStudioProjects/DevByte/app/src/main/res/layout/fragment_play_list.xml" value="0.25" />
         <entry key="..\:/WorkOnly/AndroidStudioProjects/DevByte/app/src/main/res/layout/fragment_playlist.xml" value="0.23262279888785914" />
         <entry key="..\:/WorkOnly/AndroidStudioProjects/DevByte/app/src/main/res/layout/fragment_video_details.xml" value="0.1" />
-        <entry key="..\:/WorkOnly/AndroidStudioProjects/DevByte/app/src/main/res/layout/playlist_list_item.xml" value="0.19555143651529194" />
+        <entry key="..\:/WorkOnly/AndroidStudioProjects/DevByte/app/src/main/res/layout/playlist_list_item.xml" value="0.1" />
         <entry key="..\:/WorkOnly/AndroidStudioProjects/DevByte/app/src/main/res/layout/playlist_list_tem.xml" value="0.29322916666666665" />
       </map>
     </option>
